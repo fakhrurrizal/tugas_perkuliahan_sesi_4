@@ -5,11 +5,14 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  // Tambahkan 'key' sebagai parameter konstruktur
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState(); // Perbaiki dengan class publik
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   bool isDarkMode = false;
 
   void toggleTheme() {
@@ -45,61 +48,71 @@ class HomeScreen extends StatelessWidget {
       'name': 'Bed Room',
       'devices': 7,
       'icon': Icons.bed,
-      'color': Colors.purple[300]
+      'color': Colors.purple[300],
+      'background_color': Colors.purple[300]
     },
     {
       'name': 'Kitchen',
       'devices': 5,
       'icon': Icons.kitchen,
-      'color': Colors.amber[100]
+      'color': Colors.amber[300],
+      'background_color': Colors.amber[100]
     },
     {
       'name': 'Living Room',
       'devices': 10,
       'icon': Icons.weekend,
-      'color': Colors.pink[100]
+      'color': Colors.pink[300],
+      'background_color': Colors.pink[100]
     },
     {
       'name': 'Dining Room',
       'devices': 8,
       'icon': Icons.restaurant,
-      'color': Colors.green[100]
+      'color': Colors.green[300],
+      'background_color': Colors.green[100]
     },
     {
       'name': 'Bath Room',
       'devices': 4,
       'icon': Icons.bathtub,
-      'color': Colors.blue[100]
+      'color': Colors.blue[300],
+      'background_color': Colors.blue[100]
     },
     {
       'name': 'Office Room',
       'devices': 12,
       'icon': Icons.computer,
-      'color': Colors.cyan[100]
+      'color': Colors.cyan[300],
+      'background_color': Colors.cyan[100]
     },
     {
       'name': 'Guest Room',
       'devices': 10,
       'icon': Icons.person,
-      'color': Colors.lightGreen[100]
+      'color': Colors.lightGreen[300],
+      'background_color': Colors.lightGreen[100]
     },
     {
       'name': 'Drawing Room',
       'devices': 8,
       'icon': Icons.brush,
-      'color': Colors.purple[100]
+      'color': Colors.purple[300],
+      'background_color': Colors.purple[100]
     },
     {
       'name': 'Music Room',
       'devices': 6,
       'icon': Icons.music_note,
-      'color': Colors.deepOrange[100]
+      'color': Colors.deepOrange[300],
+      'background_color': Colors.deepOrange[100]
     },
     {
       'name': 'Game Room',
       'devices': 7,
       'icon': Icons.videogame_asset,
-      'color': Colors.teal[100]
+      'color': Colors.teal[300],
+      'background_color': Colors.teal[100]
     },
   ];
 
@@ -130,7 +143,7 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final room = roomData[index];
           return Card(
-            color: room['color'],
+            color: room['background_color'],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
